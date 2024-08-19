@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devices</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="container">
+            {% for item in items %}
+            <h1>{{item.name}}</h1>
+            <p>{{item.price}}</p>
+            <p>{{item.mac_address}}</p>
+            <p>{{item.serial_number}}</p>
+            <p>{{item.manufacturer}}</p>
+            <p>{{item.description}}</p>
+            {% endfor %}
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
