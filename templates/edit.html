@@ -9,20 +9,21 @@
     <header></header>
     <main>
         <div class="container">
-            <form action="/edit" method="post">
+            <form action="{{ url_for('edit', id=el.id) }}" method="post">
+                <input type="hidden" name="_method" value="PUT">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" value="{{ el.name }}">
                 <label for="price">Price</label>
-                <input type="number" name="price" id="price">
+                <input type="number" step="0.01" name="price" id="price" value="{{ el.price }}">
                 <label for="mac-address">MAC ADDRESS</label>
-                <input type="text" name="mac-address" id="mac-address">
+                <input type="text" name="mac-address" id="mac-address" value="{{ el.mac_address }}">
                 <label for="serial-number">Serial Number</label>
-                <input type="text" name="serial-number" id="serial-number">
+                <input type="text" name="serial-number" id="serial-number" value="{{ el.serial_number }}">
                 <label for="manufacturer">Manufacturer</label>
-                <input type="text" name="manufacturer" id="manufacturer">
+                <input type="text" name="manufacturer" id="manufacturer" value="{{ el.manufacturer }}">
                 <label for="description">Description</label>
-                <input type="text" name="description" id="description">
-                <button type="submit">Submit</button>
+                <input type="text" name="description" id="description" value="{{ el.description }}">
+                <button type="submit">Edit</button>
             </form>
         </div>
     </main>
