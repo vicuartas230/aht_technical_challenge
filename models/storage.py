@@ -1,11 +1,6 @@
 from sqlalchemy import create_engine
 from .device import Device, Base
 from sqlalchemy.orm import sessionmaker
-from os import getenv
-from dotenv import load_dotenv
-
-
-load_dotenv()
 
 
 class Storage:
@@ -13,12 +8,12 @@ class Storage:
     session = None
 
     def __init__(self) -> None:
-        DB_USER = getenv('DB_USER')
-        DB_PASSWORD = getenv('DB_PASSWORD')
-        DB_HOST = getenv('DB_HOST')
-        DB_NAME = getenv('DB_NAME')
+        DB_USER = "admin"
+        DB_PASSWORD = "S8SgÑ7m8QG#v"
+        DB_HOST = "localhost"
+        DB_NAME = "devices"
         self.engine = create_engine(
-            f"mysql+mysqlconnector://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
+            f"mysql+mysqldb://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
         )
 
     def all(self):
