@@ -18,8 +18,8 @@ The **AHT Technical Test** is a web application used to demostrate the skills as
     ```bash
     DB_PASSWORD=<password> > .env
     ```
-- Ensure docker compose is installed in your machine.
-- Run the command to build the image and exec the container
+- Ensure docker compose is properly installed in your machine.
+- Run the command to build the image and exec the container.
     ``` bash
     docker compose build
     ```
