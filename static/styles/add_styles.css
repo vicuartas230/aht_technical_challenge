@@ -1,0 +1,36 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: rgba(205,229,255,1);
+}
+
+.main-container {
+    height: 100vh;
+}
+
+.home-btn {
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.col input {
+    margin-bottom: 5%;
+}
+
+.warning {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    margin: 0 auto;
+}

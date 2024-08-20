@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 from models.storage import Storage
 from models.device import Device
 from datetime import datetime
@@ -54,14 +54,10 @@ def edit(id):
         return redirect(url_for("index"))
     return render_template("edit.html", el=el)
 
-@app.route("/delete/<int:id>", strict_slashes=False)
+@app.route("/delete/<int:id>", methods=["DELETE"], strict_slashes=False)
 def delete(id):
     el = storage.get(id)
-    if el is None:
-        return {
-            "result": "No object found."
-        }
-    else:
+    if el is not None:
         storage.delete(el)
         storage.save()
-        return redirect(url_for("index"))
+    return jsonify({"success": True}), 200
